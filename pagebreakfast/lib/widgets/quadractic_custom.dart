@@ -10,7 +10,6 @@ class QuadraticCustom extends StatelessWidget {
     final width = media.size.width;
     final height = media.size.height;
     double boxMaxWidth = width > 1200 ? 600 : width;
-    double boxMaxHeight = height > 787 ? 787 : height;
 
     return SizedBox(
       width: boxMaxWidth,

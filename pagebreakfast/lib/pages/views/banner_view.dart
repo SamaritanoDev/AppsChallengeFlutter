@@ -23,8 +23,37 @@ class BannerView extends ResponsiveLayaout {
   }
 }
 
-class BannerViewDesktop extends StatelessWidget {
+class BannerViewDesktop extends StatefulWidget {
   const BannerViewDesktop({super.key});
+
+  @override
+  State<BannerViewDesktop> createState() => _BannerViewDesktopState();
+}
+
+class _BannerViewDesktopState extends State<BannerViewDesktop>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _rotationController;
+
+  @override
+  void initState() {
+    super.initState();
+    _rotationController = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    )..repeat();
+
+    Future.delayed(const Duration(seconds: 4), () {
+      if (mounted) {
+        _rotationController.stop();
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _rotationController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +61,6 @@ class BannerViewDesktop extends StatelessWidget {
     final width = media.size.width;
     final height = media.size.height;
     final textTheme = Theme.of(context).textTheme;
-    //final color = Theme.of(context).colorScheme;
-    //double maxWidth = width > desktopWidth ? desktopWidth : width;
-    double maxHeight = height > desktopHeight ? desktopHeight : height;
 
     return SizedBox(
       width: width,
@@ -86,26 +112,24 @@ class BannerViewDesktop extends StatelessWidget {
           ),
           //quadractic
           const QuadraticCustom(),
+
           Positioned(
-            top: 30,
-            right: 50,
-            child: CircleAvatar(
-              backgroundColor: brown,
-              child: IconButton(
-                  color: Colors.white,
-                  onPressed: () {},
-                  icon: const Icon(Icons.shopping_cart)),
+            top: 100,
+            right: 100,
+            child: RotationTransition(
+              turns: Tween(begin: 0.0, end: 1.0).animate(_rotationController),
+              child: Container(
+                width: 600,
+                height: 650,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    fit: BoxFit.contain,
+                    image: AssetImage('assets/bananna.png'),
+                  ),
+                ),
+              ),
             ),
           ),
-          Positioned(
-            top: 200,
-            right: 200,
-            child: Container(
-              color: brown,
-              width: 500,
-              height: 550,
-            ),
-          )
         ],
       ),
     );
