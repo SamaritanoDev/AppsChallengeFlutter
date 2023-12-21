@@ -1,25 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:pagebreakfast/constants/lists.dart';
+import 'package:pagebreakfast/constants/constants.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final color = Theme.of(context).colorScheme;
-
     return Scaffold(
-      backgroundColor: Colors.grey[350],
-      appBar: AppBar(
-        primary: true,
-        backgroundColor: Colors.grey[100],
-        leading: Icon(
-          Icons.computer,
-          color: color.primary,
-        ),
-        title: const Text("flutterina studio"),
-        elevation: 0,
-      ),
+      backgroundColor: primaryBanana,
       body: Center(
         child: Expanded(
           child: SingleChildScrollView(

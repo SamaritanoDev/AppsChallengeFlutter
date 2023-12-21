@@ -17,3 +17,12 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  fonts:
+    - family: rubik scribble
+      fonts:
+      - asset: fonts/Rubik_Scribble/RubikScribble-Regular.ttf
+      
+    - family: acme
+      fonts:
+      - asset: fonts/Acme/Acme-Regular.ttf
