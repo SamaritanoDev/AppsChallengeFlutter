@@ -1,0 +1,43 @@
+name: finance_app_bubbles
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  animate_do: ^3.3.4
+  flutter:
+    sdk: flutter
+  flutter_svg: ^2.0.10+1
+
+dev_dependencies:
+  flutter_lints: ^3.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  
+  assets:
+    - assets/isotipo_bubbles.png
+    - assets/isotipo_bubbles.svg
+    - assets/cloud_bottom.svg
+    - assets/cloud_top.svg
+    - assets/women_cash.png
+    - assets/user_card.png
+    - assets/user_money.png
+
+
+  fonts:
+    - family: latoBold
+      fonts:
+      - asset: fonts/lato/Lato-Bold.ttf
+    - family: latoRegular
+      fonts:
+      - asset: fonts/lato/Lato-Regular.ttf
+    - family: latoSemiBold
+      fonts:
+      - asset: fonts/lato/Lato-Black.ttf
