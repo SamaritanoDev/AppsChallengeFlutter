@@ -1,5 +1,4 @@
-import 'package:animate_do/animate_do.dart';
-import 'package:finance_app_bubbles/src/features/domain/slide_info.dart';
+import 'package:finance_app_bubbles/src/features/onboarding/domain/slide_info.dart';
 import 'package:finance_app_bubbles/src/utils/backgroung_cloud.dart';
 import 'package:flutter/material.dart';
 
@@ -35,7 +34,7 @@ class __SliderOnboardingState extends State<_SliderOnboarding> {
       setState(() {
         selectedIndicator = pageviewController.page!.round();
       });
-      if (!endReached && pageviewController.page! >= (slides.length - 1.5)) {
+      if (!endReached && pageviewController.page! >= (slides.length - 1)) {
         endReached = true;
       }
     });
@@ -71,14 +70,7 @@ class __SliderOnboardingState extends State<_SliderOnboarding> {
               )
               .toList(),
         ),
-        Positioned(
-          top: 50,
-          right: 20,
-          child: TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: Text('Skip', style: subtitleTextButton),
-          ),
-        ),
+
         //indicadores
         Positioned(
           bottom: 125,
@@ -96,45 +88,40 @@ class __SliderOnboardingState extends State<_SliderOnboarding> {
                     slides.length,
                     (index) => Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                      child: GestureDetector(
-                        onTap: () {
-                          print('hola');
-                          pageviewController.animateToPage(
-                            index,
-                            curve: Curves.ease,
-                            duration: const Duration(milliseconds: 300),
-                          );
-                        },
-                        child: AnimatedContainer(
-                          duration: const Duration(milliseconds: 300),
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: selectedIndicator == index
-                                ? color.primary
-                                : const Color(0xffC6C5C5),
-                            boxShadow: selectedIndicator == index
-                                ? [
-                                    BoxShadow(
-                                      color: Colors.black.withOpacity(0.5),
-                                      blurRadius: 5.0,
-                                      spreadRadius: 1.0,
-                                    ),
-                                  ]
-                                : null,
-                          ),
-                          width: 15.33,
-                          height: 15.0,
+                      child: AnimatedContainer(
+                        duration: const Duration(milliseconds: 300),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: selectedIndicator == index
+                              ? color.primary
+                              : const Color(0xffC6C5C5),
+                          boxShadow: selectedIndicator == index
+                              ? [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.5),
+                                    blurRadius: 5.0,
+                                    spreadRadius: 1.0,
+                                  ),
+                                ]
+                              : null,
                         ),
+                        width: 15.33,
+                        height: 15.0,
                       ),
                     ),
                   ),
                 ),
-                //icon row
+                //iconbutton
                 const SizedBox(width: 83),
                 if (selectedIndicator < slides.length - 1)
                   IconButton(
                     onPressed: () {
-                      print('on clic');
+                      if (selectedIndicator < slides.length - 1) {
+                        pageviewController.nextPage(
+                          duration: const Duration(milliseconds: 300),
+                          curve: Curves.ease,
+                        );
+                      }
                     },
                     icon: Icon(
                       Icons.arrow_circle_right,
@@ -146,23 +133,31 @@ class __SliderOnboardingState extends State<_SliderOnboarding> {
             ),
           ),
         ),
-
+        Positioned(
+          top: 50,
+          right: 20,
+          child: TextButton(
+            onPressed: () {
+              print("Skip button pressed");
+              Navigator.pushReplacementNamed(context, '/singin');
+            },
+            child: Text('Skip', style: subtitleTextButton),
+          ),
+        ),
         endReached
             ? Visibility(
-                visible: selectedIndicator ==
-                    slides.length - 1, // Show only on last slide
+                visible: selectedIndicator == slides.length - 1,
                 child: Positioned(
                   right: 19,
                   bottom: 125,
-                  child: FadeInRight(
-                    from: 15,
-                    delay: const Duration(seconds: 1),
-                    child: FilledButton(
-                      onPressed: () => {},
-                      child: Text(
-                        'Get Started',
-                        style: subtitleButton,
-                      ),
+                  child: FilledButton(
+                    onPressed: () {
+                      print("Get Started button pressed");
+                      Navigator.pushNamed(context, '/singin');
+                    },
+                    child: Text(
+                      'Get Started',
+                      style: subtitleButton,
                     ),
                   ),
                 ),

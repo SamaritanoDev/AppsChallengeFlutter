@@ -1,4 +1,6 @@
 import 'package:finance_app_bubbles/src/features/onboarding/my_onboarding.dart';
+import 'package:finance_app_bubbles/src/features/signIn/sign_in.dart';
+import 'package:finance_app_bubbles/src/features/signUp/sign_up.dart';
 import 'package:finance_app_bubbles/src/features/splash/splash_screen.dart';
 import 'package:finance_app_bubbles/src/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +22,8 @@ class MainApp extends StatelessWidget {
       routes: {
         '/splash': (context) => const SplashScreen(),
         '/onboarding': (context) => const MyOnboarding(),
+        '/singin': (context) => const SignIn(),
+        '/signup': (context) => const SignUp(),
       },
     );
   }
