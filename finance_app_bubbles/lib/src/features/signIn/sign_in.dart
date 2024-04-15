@@ -4,26 +4,21 @@ import 'package:finance_app_bubbles/src/shared/line_leters.dart';
 import 'package:finance_app_bubbles/src/shared/link_custom.dart';
 import 'package:finance_app_bubbles/src/utils/backgroung_cloud.dart';
 import 'package:finance_app_bubbles/src/utils/button_lage_custom.dart';
+import 'package:finance_app_bubbles/src/utils/subtitle_custom.dart';
+import 'package:finance_app_bubbles/src/utils/title_custom.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({super.key});
 
   @override
   Widget build(BuildContext context) {
+    String routeName = 'in';
     final color = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
     //styles
-    final titleStyle = textTheme.headlineLarge?.copyWith(
-      color: color.onPrimaryContainer,
-      fontFamily: 'latoRegular',
-    );
-    final subtitleStyle = textTheme.titleSmall?.copyWith(
-      color: const Color(0xff666464),
-      fontFamily: 'latoSemiBold',
-    );
+
     final linkStyle = textTheme.titleSmall?.copyWith(
       fontFamily: 'latoRegular',
       color: color.primary,
@@ -43,12 +38,10 @@ class SignIn extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Text('Sign in', style: titleStyle),
+              TitleCustom(title: routeName),
               const SizedBox(height: 17),
-              Text(
-                'Hi ! Welcome back, you have been missed.',
-                style: subtitleStyle,
-              ),
+              const SubtitleCustom(
+                  subtitle: 'Hi ! Welcome back, you have been missed.'),
               const SizedBox(height: 58),
               //form
               const FormEmailPassword(),
@@ -64,21 +57,19 @@ class SignIn extends StatelessWidget {
               //Sign in
               const ButtonLargeCustom(label: 'Sign in'),
               const SizedBox(height: 58),
-              const Align(
+              Align(
                 alignment: Alignment.center,
                 child: LineLeters(
-                  routeName: 'in',
+                  routeName: routeName,
                 ),
               ),
               const SizedBox(height: 58),
               //buttons social
               const ButtonsSocialMedia(),
               const SizedBox(height: 48),
-              InkWell(
-                onTap: () {
-                  print('hello');
-                },
-                child: const LinkCustom(routeName: 'Up'),
+              const LinkCustom(
+                routeName: 'up',
+                questionText: 'Don’t have an account?',
               ),
             ],
           ),

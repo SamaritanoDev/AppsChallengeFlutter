@@ -26,7 +26,10 @@ class BackgroundCloud extends StatelessWidget {
               ),
             ),
           ),
-          Align(alignment: Alignment.center, child: child),
+          Align(
+            alignment: Alignment.center,
+            child: child,
+          ),
           Positioned(
             bottom: 0,
             child: IgnorePointer(

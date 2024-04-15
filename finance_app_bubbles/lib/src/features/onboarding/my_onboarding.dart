@@ -138,7 +138,6 @@ class __SliderOnboardingState extends State<_SliderOnboarding> {
           right: 20,
           child: TextButton(
             onPressed: () {
-              print("Skip button pressed");
               Navigator.pushReplacementNamed(context, '/singin');
             },
             child: Text('Skip', style: subtitleTextButton),
@@ -152,7 +151,6 @@ class __SliderOnboardingState extends State<_SliderOnboarding> {
                   bottom: 125,
                   child: FilledButton(
                     onPressed: () {
-                      print("Get Started button pressed");
                       Navigator.pushNamed(context, '/singin');
                     },
                     child: Text(
