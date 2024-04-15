@@ -1,3 +1,4 @@
+import 'package:finance_app_bubbles/src/utils/backgroung_cloud.dart';
 import 'package:flutter/material.dart';
 
 class SignUp extends StatelessWidget {
@@ -6,8 +7,10 @@ class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(
-        child: Text('Sign Up'),
+      body: BackgroundCloud(
+        child: Center(
+          child: Text('Sign Up'),
+        ),
       ),
     );
   }

@@ -5,6 +5,7 @@ import 'package:finance_app_bubbles/src/shared/link_custom.dart';
 import 'package:finance_app_bubbles/src/utils/backgroung_cloud.dart';
 import 'package:finance_app_bubbles/src/utils/button_lage_custom.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({super.key});
@@ -65,13 +66,20 @@ class SignIn extends StatelessWidget {
               const SizedBox(height: 58),
               const Align(
                 alignment: Alignment.center,
-                child: LineLeters(),
+                child: LineLeters(
+                  routeName: 'in',
+                ),
               ),
               const SizedBox(height: 58),
               //buttons social
               const ButtonsSocialMedia(),
               const SizedBox(height: 48),
-              const LinkCustom(),
+              InkWell(
+                onTap: () {
+                  print('hello');
+                },
+                child: const LinkCustom(routeName: 'Up'),
+              ),
             ],
           ),
         ),

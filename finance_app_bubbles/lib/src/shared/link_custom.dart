@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class LinkCustom extends StatelessWidget {
-  const LinkCustom({super.key});
+  final String routeName;
+  const LinkCustom({
+    super.key,
+    required this.routeName,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +29,10 @@ class LinkCustom extends StatelessWidget {
             text: 'Don’t have an account?',
             style: textLinkStyle,
             children: <InlineSpan>[
-              TextSpan(text: ' Sign up', style: boldTextLinkStyle),
+              TextSpan(
+                text: ' Sign $routeName',
+                style: boldTextLinkStyle,
+              ),
             ],
           ),
         ),

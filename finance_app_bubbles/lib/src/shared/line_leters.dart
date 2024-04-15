@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 
 class LineLeters extends StatelessWidget {
-  const LineLeters({super.key});
+  final String routeName;
+  const LineLeters({
+    super.key,
+    required this.routeName,
+  });
 
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     final color = Theme.of(context).colorScheme;
-//styles
+    //styles
     final lineTextStyle = textTheme.headlineLarge?.copyWith(
       color: color.onPrimaryContainer,
       fontFamily: 'latoRegular',
@@ -20,7 +24,7 @@ class LineLeters extends StatelessWidget {
         children: [
           const LineCustom(),
           Text(
-            'Or sign in with',
+            'Or sign $routeName with',
             style: lineTextStyle,
           ),
           const LineCustom(),

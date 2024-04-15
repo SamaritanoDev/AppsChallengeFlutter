@@ -13,25 +13,30 @@ class BackgroundCloud extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
+        alignment: Alignment.center,
         clipBehavior: Clip.none,
         children: [
           Positioned(
             top: 0,
-            child: SizedBox(
-              child: SvgPicture.asset(
-                cloudTop,
+            child: IgnorePointer(
+              child: SizedBox(
+                child: SvgPicture.asset(
+                  cloudTop,
+                ),
               ),
             ),
           ),
           Align(alignment: Alignment.center, child: child),
           Positioned(
             bottom: 0,
-            child: SizedBox(
-              child: SvgPicture.asset(
-                cloudBottom,
+            child: IgnorePointer(
+              child: SizedBox(
+                child: SvgPicture.asset(
+                  cloudBottom,
+                ),
               ),
             ),
-          )
+          ),
         ],
       ),
     );
