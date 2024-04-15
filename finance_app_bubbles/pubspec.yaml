@@ -29,6 +29,9 @@ flutter:
     - assets/women_cash.png
     - assets/user_card.png
     - assets/user_money.png
+    - assets/icons/icon-apple.png
+    - assets/icons/icon-google.png
+    - assets/icons/icon-linkedin.png
 
 
   fonts:

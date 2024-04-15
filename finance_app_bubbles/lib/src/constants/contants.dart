@@ -7,3 +7,8 @@ const cloudTop = 'assets/cloud_top.svg';
 const slideOne = 'assets/user_money.png';
 const slideTwo = 'assets/women_cash.png';
 const slideThree = 'assets/user_card.png';
+
+//icons
+const iconApple = 'assets/icons/icon-apple.png';
+const iconGoogle = 'assets/icons/icon-google.png';
+const iconLinkedin = 'assets/icons/icon-linkedin.png';

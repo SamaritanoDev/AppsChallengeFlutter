@@ -25,6 +25,7 @@ class TextFieldCustom extends StatelessWidget {
         const SizedBox(height: 5),
         const SizedBox(
           width: 339,
+          height: 44,
           child: TextField(
             decoration: InputDecoration(
               border: OutlineInputBorder(
