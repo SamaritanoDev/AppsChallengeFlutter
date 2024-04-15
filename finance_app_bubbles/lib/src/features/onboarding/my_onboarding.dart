@@ -81,56 +81,89 @@ class __SliderOnboardingState extends State<_SliderOnboarding> {
         ),
         //indicadores
         Positioned(
-          bottom: 115,
+          bottom: 125,
           left: 0,
           right: 0,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: List.generate(
-              slides.length,
-              (index) => Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                child: GestureDetector(
-                  onTap: () => pageviewController.animateToPage(
-                    index,
-                    curve: Curves.ease,
-                    duration: const Duration(milliseconds: 300),
-                  ),
-                  child: AnimatedContainer(
-                    duration: const Duration(milliseconds: 300),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: selectedIndicator == index
-                          ? color.primary
-                          : const Color(0xffC6C5C5),
-                      boxShadow: selectedIndicator == index
-                          ? [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.5),
-                                blurRadius: 5.0,
-                                spreadRadius: 1.0,
-                              ),
-                            ]
-                          : null,
+          child: SizedBox(
+            height: 50,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                //indicators
+                Row(
+                  children: List.generate(
+                    slides.length,
+                    (index) => Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                      child: GestureDetector(
+                        onTap: () {
+                          print('hola');
+                          pageviewController.animateToPage(
+                            index,
+                            curve: Curves.ease,
+                            duration: const Duration(milliseconds: 300),
+                          );
+                        },
+                        child: AnimatedContainer(
+                          duration: const Duration(milliseconds: 300),
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: selectedIndicator == index
+                                ? color.primary
+                                : const Color(0xffC6C5C5),
+                            boxShadow: selectedIndicator == index
+                                ? [
+                                    BoxShadow(
+                                      color: Colors.black.withOpacity(0.5),
+                                      blurRadius: 5.0,
+                                      spreadRadius: 1.0,
+                                    ),
+                                  ]
+                                : null,
+                          ),
+                          width: 15.33,
+                          height: 15.0,
+                        ),
+                      ),
                     ),
-                    width: 15.33,
-                    height: 15.0,
                   ),
                 ),
-              ),
+                //icon row
+                const SizedBox(width: 83),
+                if (selectedIndicator < slides.length - 1)
+                  IconButton(
+                    onPressed: () {
+                      print('on clic');
+                    },
+                    icon: Icon(
+                      Icons.arrow_circle_right,
+                      color: color.primary,
+                      size: 40,
+                    ),
+                  ),
+              ],
             ),
           ),
         ),
+
         endReached
-            ? Positioned(
-                right: 19,
-                bottom: 100,
-                child: FadeInRight(
-                  from: 15,
-                  delay: const Duration(seconds: 1),
-                  child: FilledButton(
-                    onPressed: () => {},
-                    child: Text('Get Started', style: subtitleButton),
+            ? Visibility(
+                visible: selectedIndicator ==
+                    slides.length - 1, // Show only on last slide
+                child: Positioned(
+                  right: 19,
+                  bottom: 125,
+                  child: FadeInRight(
+                    from: 15,
+                    delay: const Duration(seconds: 1),
+                    child: FilledButton(
+                      onPressed: () => {},
+                      child: Text(
+                        'Get Started',
+                        style: subtitleButton,
+                      ),
+                    ),
                   ),
                 ),
               )
@@ -167,7 +200,11 @@ class _SlideCustom extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset(imgaeUrl),
+            Image.asset(
+              imgaeUrl,
+              width: 430,
+              height: 237,
+            ),
             const SizedBox(height: 49),
             Text(title, style: titleStyle),
             const SizedBox(height: 35),
