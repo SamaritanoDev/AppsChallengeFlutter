@@ -1,6 +1,7 @@
 import 'package:finance_app_bubbles/src/shared/buttons_social_media.dart';
 import 'package:finance_app_bubbles/src/shared/form_email_password.dart';
 import 'package:finance_app_bubbles/src/shared/line_leters.dart';
+import 'package:finance_app_bubbles/src/shared/link_custom.dart';
 import 'package:finance_app_bubbles/src/utils/backgroung_cloud.dart';
 import 'package:finance_app_bubbles/src/utils/button_lage_custom.dart';
 import 'package:flutter/material.dart';
@@ -31,8 +32,12 @@ class SignIn extends StatelessWidget {
     return Scaffold(
       body: BackgroundCloud(
         child: Padding(
-          padding:
-              const EdgeInsets.only(left: 26, right: 25, bottom: 101, top: 55),
+          padding: const EdgeInsets.only(
+            left: 26,
+            right: 25,
+            bottom: 101,
+            top: 92,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.start,
@@ -62,10 +67,11 @@ class SignIn extends StatelessWidget {
                 alignment: Alignment.center,
                 child: LineLeters(),
               ),
-              const SizedBox(height: 68),
+              const SizedBox(height: 58),
               //buttons social
               const ButtonsSocialMedia(),
-              const SizedBox(height: 58.51),
+              const SizedBox(height: 48),
+              const LinkCustom(),
             ],
           ),
         ),
