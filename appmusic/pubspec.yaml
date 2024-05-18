@@ -11,6 +11,7 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^8.1.3
   flutter_svg: ^2.0.7
+  sleek_circular_slider: ^2.0.1
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -27,3 +28,4 @@ flutter:
     - assets/background-auricular.png
     - assets/auricular-shadow.png
     - assets/auricular-start.png
+    - assets/women-in-read.png

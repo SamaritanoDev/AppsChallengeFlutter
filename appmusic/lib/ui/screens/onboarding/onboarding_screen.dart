@@ -30,29 +30,39 @@ class _ContendOnboarding extends StatelessWidget {
                 color: color.primary,
               ),
             ),
-            Text(
-              'Customize YLet’s vibe together , create your own playlist\n and enjoy music.',
-              style: styles.bodyMedium,
+            const Text(
+              'Customize YLet’s vibe together , create your own playlist and enjoy music.',
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 175),
             const Expanded(child: OnboardingAuricular()),
             const SizedBox(height: 40),
             Align(
               alignment: Alignment.bottomLeft,
-              child: ElevatedButton.icon(
-                style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
-                  color.primary,
-                )),
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.arrow_forward,
-                  color: Colors.white,
-                ),
-                label: Text(
-                  'Get Started',
-                  style: styles.labelSmall?.copyWith(
-                    color: Colors.white,
+              child: SizedBox(
+                width: 150,
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                    color.primary,
+                  )),
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context, '/home');
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Get Started',
+                        style: styles.bodySmall?.copyWith(
+                          color: Colors.white,
+                        ),
+                      ),
+                      const Icon(
+                        Icons.arrow_forward,
+                        color: Colors.white,
+                      ),
+                    ],
                   ),
                 ),
               ),

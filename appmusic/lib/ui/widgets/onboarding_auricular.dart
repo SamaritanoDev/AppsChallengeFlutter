@@ -1,4 +1,4 @@
-import 'package:appmusic/bloc/cubit/animation_auricular_cubit.dart';
+import 'package:appmusic/bloc/animation/animation_auricular_cubit.dart';
 import 'package:appmusic/config/enviroments.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -29,6 +29,8 @@ class _AnimatedImageSwitcher extends StatelessWidget {
   Widget build(BuildContext context) {
     _switchImages(context);
 
+    final screenSize = MediaQuery.of(context).size;
+
     return Stack(
       clipBehavior: Clip.none,
       children: [
@@ -37,7 +39,7 @@ class _AnimatedImageSwitcher extends StatelessWidget {
           top: -200,
           right: -162,
           child: SizedBox(
-            height: 600,
+            height: screenSize.height * 0.65,
             child: BlocBuilder<AnimationAuricularCubit, AnimationAuricularState>(
               builder: (context, state) {
                 if (state is ShadowlessImageState) {
@@ -60,12 +62,13 @@ class _BackgroundAuricular extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
     return Opacity(
       opacity: 1,
       child: Image.asset(
         backgroundAuricularPath,
         fit: BoxFit.contain,
-        height: 370,
+        height: screenSize.height * 0.4,
       ),
     );
   }

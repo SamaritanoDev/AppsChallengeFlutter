@@ -1,4 +1,5 @@
 import 'package:appmusic/config/theme/app_theme.dart';
+import 'package:appmusic/ui/screens/home/home_screen.dart';
 import 'package:appmusic/ui/screens/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +17,7 @@ class MainApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const OnboardingScreen(),
+        '/home': (context) => const HomeScreen(),
       },
     );
   }
