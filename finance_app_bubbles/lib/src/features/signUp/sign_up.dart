@@ -19,6 +19,7 @@ class SignUp extends StatelessWidget {
 
     return Scaffold(
       body: BackgroundCloud(
+        heightCloudBottom: 0.52,
         child: Padding(
           padding: const EdgeInsets.only(
             left: 26,
