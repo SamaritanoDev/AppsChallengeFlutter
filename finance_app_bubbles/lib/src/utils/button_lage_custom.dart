@@ -18,7 +18,7 @@ class ButtonLargeCustom extends StatelessWidget {
 
     return Container(
       alignment: Alignment.center,
-      width: 339,
+      width: double.infinity,
       height: 44,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),

@@ -13,7 +13,6 @@ class TextFieldCustom extends StatelessWidget {
   Widget build(BuildContext context) {
     final color = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
-
     //styles
     final labelStyle = textTheme.titleMedium?.copyWith(
       color: color.primary,
@@ -26,7 +25,7 @@ class TextFieldCustom extends StatelessWidget {
         Text(labelTextField, style: labelStyle),
         const SizedBox(height: 5),
         SizedBox(
-          width: width ?? 339,
+          width: width,
           height: 44,
           child: const TextField(
             decoration: InputDecoration(

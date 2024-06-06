@@ -37,6 +37,7 @@ class SignUp extends StatelessWidget {
               const SizedBox(height: 58),
               //form
               Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   TextFieldCustom(
                     labelTextField: 'First name',
