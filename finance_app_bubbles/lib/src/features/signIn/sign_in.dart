@@ -3,7 +3,7 @@ import 'package:finance_app_bubbles/src/shared/form_email_password.dart';
 import 'package:finance_app_bubbles/src/shared/line_leters.dart';
 import 'package:finance_app_bubbles/src/shared/link_custom.dart';
 import 'package:finance_app_bubbles/src/utils/backgroung_cloud.dart';
-import 'package:finance_app_bubbles/src/utils/button_lage_custom.dart';
+import 'package:finance_app_bubbles/src/utils/button_large_custom.dart';
 import 'package:finance_app_bubbles/src/utils/subtitle_custom.dart';
 import 'package:finance_app_bubbles/src/utils/title_custom.dart';
 import 'package:flutter/material.dart';
@@ -56,7 +56,10 @@ class SignIn extends StatelessWidget {
               ),
               const SizedBox(height: 34),
               //Sign in
-              const ButtonLargeCustom(label: 'Sign in'),
+              const ButtonLargeCustom(
+                label: 'Sign in',
+                nameRoute: '/home',
+              ),
               const SizedBox(height: 58),
               Align(
                 alignment: Alignment.center,

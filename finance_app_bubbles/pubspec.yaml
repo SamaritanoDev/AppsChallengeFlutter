@@ -32,6 +32,7 @@ flutter:
     - assets/icons/icon-apple.png
     - assets/icons/icon-google.png
     - assets/icons/icon-linkedin.png
+    - assets/cloud_home.svg
 
 
   fonts:

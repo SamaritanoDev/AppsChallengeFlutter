@@ -3,7 +3,7 @@ import 'package:finance_app_bubbles/src/shared/form_email_password.dart';
 import 'package:finance_app_bubbles/src/shared/line_leters.dart';
 import 'package:finance_app_bubbles/src/shared/link_custom.dart';
 import 'package:finance_app_bubbles/src/utils/backgroung_cloud.dart';
-import 'package:finance_app_bubbles/src/utils/button_lage_custom.dart';
+import 'package:finance_app_bubbles/src/utils/button_large_custom.dart';
 import 'package:finance_app_bubbles/src/utils/subtitle_custom.dart';
 import 'package:finance_app_bubbles/src/utils/text_field_custom.dart';
 import 'package:finance_app_bubbles/src/utils/title_custom.dart';
@@ -53,7 +53,10 @@ class SignUp extends StatelessWidget {
               const SizedBox(height: 20),
               const FormEmailPassword(),
               const SizedBox(height: 33),
-              ButtonLargeCustom(label: 'Sign $routeName'),
+              ButtonLargeCustom(
+                label: 'Sign $routeName',
+                nameRoute: '/home',
+              ),
               const SizedBox(height: 34.5),
               Align(
                 alignment: Alignment.center,

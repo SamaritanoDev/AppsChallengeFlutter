@@ -12,3 +12,6 @@ const slideThree = 'assets/user_card.png';
 const iconApple = 'assets/icons/icon-apple.png';
 const iconGoogle = 'assets/icons/icon-google.png';
 const iconLinkedin = 'assets/icons/icon-linkedin.png';
+
+//images of background in home
+const cloudHome = 'assets/cloud_home.svg';
