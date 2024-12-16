@@ -49,7 +49,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
               icon: const Icon(
                 Icons.favorite_outline,
               ),
-              label: 'Complete Ticket',
+              label: 'My cards',
             ),
           ]),
       body: screens[currentPageIndex],

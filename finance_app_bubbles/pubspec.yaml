@@ -10,6 +10,7 @@ dependencies:
   animate_do: ^3.3.4
   flutter:
     sdk: flutter
+  flutter_card_swiper: ^7.0.1
   flutter_svg: ^2.0.10+1
 
 dev_dependencies:
@@ -20,7 +21,6 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-  
   assets:
     - assets/isotipo_bubbles.png
     - assets/isotipo_bubbles.svg
@@ -33,15 +33,16 @@ flutter:
     - assets/icons/icon-google.png
     - assets/icons/icon-linkedin.png
     - assets/cloud_home.svg
-
+    - assets/photos/photo.png
+    - lib/src/data/list_cards.json
 
   fonts:
     - family: latoBold
       fonts:
-      - asset: fonts/lato/Lato-Bold.ttf
+        - asset: fonts/lato/Lato-Bold.ttf
     - family: latoRegular
       fonts:
-      - asset: fonts/lato/Lato-Regular.ttf
+        - asset: fonts/lato/Lato-Regular.ttf
     - family: latoSemiBold
       fonts:
-      - asset: fonts/lato/Lato-Black.ttf
+        - asset: fonts/lato/Lato-Black.ttf

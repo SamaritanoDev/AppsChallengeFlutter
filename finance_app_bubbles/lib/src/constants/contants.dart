@@ -15,3 +15,4 @@ const iconLinkedin = 'assets/icons/icon-linkedin.png';
 
 //images of background in home
 const cloudHome = 'assets/cloud_home.svg';
+const photo = 'assets/photos/photo.png';

@@ -1,0 +1,20 @@
+[
+    {
+        "entityName": "Visa",
+        "numberCard": 4123456789012345,
+        "rs": 12346.00,
+        "colorName": "0xff8e7ab5"
+    },
+    {
+        "entityName": "Mastercard",
+        "numberCard": 5555555555555555,
+        "rs": 55553.00,
+        "colorName": "0xffE493B3"
+    },
+    {
+        "entityName": "Visa",
+        "numberCard": 4012345678901234,
+        "rs": 67895.00,
+        "colorName": "0xff4804B6"
+    }
+]

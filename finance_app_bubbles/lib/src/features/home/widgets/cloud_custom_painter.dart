@@ -6,8 +6,8 @@ class CloudCustomPainter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: double.infinity,
       width: double.infinity,
+      height: double.infinity,
       child: CustomPaint(
         painter: _CloudCustomPainterPainter(),
       ),

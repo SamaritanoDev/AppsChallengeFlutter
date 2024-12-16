@@ -1,4 +1,7 @@
 import 'package:finance_app_bubbles/src/features/home/widgets/background_home.dart';
+import 'package:finance_app_bubbles/src/features/home/widgets/header_home.dart';
+import 'package:finance_app_bubbles/src/features/home/widgets/list_cards.dart';
+import 'package:finance_app_bubbles/src/features/home/widgets/list_menu.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -28,11 +31,21 @@ class _ContendHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text('hola que tal'),
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(right: 22, left: 22),
+      child: Column(
+        children: [
+          const SizedBox(height: 90),
+          const HeaderHome(),
+          const SizedBox(height: 49),
+          const ListCards(),
+          Container(
+            color: Colors.amber,
+            child: const ListMenu(),
+          ),
+          const Spacer(),
+        ],
+      ),
     );
   }
 }

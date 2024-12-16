@@ -7,14 +7,8 @@ class MyCardsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: SafeArea(
-        child: Center(
-          child: SizedBox(
-            width: 300,
-            height: 500,
-            child: CloudCustomPainter(),
-          ),
-        ),
+      body: Center(
+        child: CloudCustomPainter(),
       ),
     );
   }
